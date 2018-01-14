@@ -8,17 +8,9 @@
 
 import UIKit
 
-class CustomTableViewCell: UIViewController {
+class CustomTableViewCell: UITableViewCell {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    @IBOutlet weak var tenpoText: UILabel!
+    @IBOutlet weak var topImage: UIImageView!
     
 }
