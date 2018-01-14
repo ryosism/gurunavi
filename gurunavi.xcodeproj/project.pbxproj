@@ -17,6 +17,7 @@
 		201951BF200B991000C28217 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951BE200B991000C28217 /* CustomTableViewCell.swift */; };
 		201951C3200BA42600C28217 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C2200BA42600C28217 /* ResultTableViewController.swift */; };
 		201951C5200BAAF900C28217 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C4200BAAF900C28217 /* DetailViewController.swift */; };
+		201951C7200BABD600C28217 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C6200BABD600C28217 /* DataRequest.swift */; };
 		51E944EEC0648AA369899D65 /* Pods_gurunaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36826875346DCA78DB9281A /* Pods_gurunaviTests.framework */; };
 		8ECE4E0C070651D300F65147 /* Pods_gurunaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254019DE3F479767E5BE9925 /* Pods_gurunaviUITests.framework */; };
 		B6AA4D28041FEC1290BF422E /* Pods_gurunavi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A4827DFACF80F3D6A19CD /* Pods_gurunavi.framework */; };
@@ -57,6 +58,7 @@
 		201951BE200B991000C28217 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		201951C2200BA42600C28217 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultTableViewController.swift; path = "/Users/ryou/Documents/Xcode/Xcode Projects/動作確認用/gurunavi/gurunavi/ResultTableViewController.swift"; sourceTree = "<absolute>"; };
 		201951C4200BAAF900C28217 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		201951C6200BABD600C28217 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		254019DE3F479767E5BE9925 /* Pods_gurunaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gurunaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FBE2F6B7C61653AE728DBE /* Pods-gurunavi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunavi.release.xcconfig"; path = "Pods/Target Support Files/Pods-gurunavi/Pods-gurunavi.release.xcconfig"; sourceTree = "<group>"; };
 		83EE9863ECE5764B91657786 /* Pods-gurunaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunaviUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gurunaviUITests/Pods-gurunaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				20195190200B2F6200C28217 /* ViewController.swift */,
 				20195192200B2F6200C28217 /* Main.storyboard */,
 				201951C4200BAAF900C28217 /* DetailViewController.swift */,
+				201951C6200BABD600C28217 /* DataRequest.swift */,
 				201951C2200BA42600C28217 /* ResultTableViewController.swift */,
 				201951BE200B991000C28217 /* CustomTableViewCell.swift */,
 				20195195200B2F6200C28217 /* Assets.xcassets */,
@@ -458,6 +461,7 @@
 				201951C3200BA42600C28217 /* ResultTableViewController.swift in Sources */,
 				20195191200B2F6200C28217 /* ViewController.swift in Sources */,
 				201951C5200BAAF900C28217 /* DetailViewController.swift in Sources */,
+				201951C7200BABD600C28217 /* DataRequest.swift in Sources */,
 				2019518F200B2F6200C28217 /* AppDelegate.swift in Sources */,
 				201951BF200B991000C28217 /* CustomTableViewCell.swift in Sources */,
 			);
