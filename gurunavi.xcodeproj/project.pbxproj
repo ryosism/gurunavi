@@ -18,6 +18,7 @@
 		201951C3200BA42600C28217 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C2200BA42600C28217 /* ResultTableViewController.swift */; };
 		201951C5200BAAF900C28217 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C4200BAAF900C28217 /* DetailViewController.swift */; };
 		201951C7200BABD600C28217 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951C6200BABD600C28217 /* DataRequest.swift */; };
+		201951CA200BB1DB00C28217 /* dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 201951C9200BB1DB00C28217 /* dinner.png */; };
 		51E944EEC0648AA369899D65 /* Pods_gurunaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36826875346DCA78DB9281A /* Pods_gurunaviTests.framework */; };
 		8ECE4E0C070651D300F65147 /* Pods_gurunaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254019DE3F479767E5BE9925 /* Pods_gurunaviUITests.framework */; };
 		B6AA4D28041FEC1290BF422E /* Pods_gurunavi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A4827DFACF80F3D6A19CD /* Pods_gurunavi.framework */; };
@@ -59,6 +60,7 @@
 		201951C2200BA42600C28217 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultTableViewController.swift; path = "/Users/ryou/Documents/Xcode/Xcode Projects/動作確認用/gurunavi/gurunavi/ResultTableViewController.swift"; sourceTree = "<absolute>"; };
 		201951C4200BAAF900C28217 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		201951C6200BABD600C28217 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		201951C9200BB1DB00C28217 /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner.png; sourceTree = "<group>"; };
 		254019DE3F479767E5BE9925 /* Pods_gurunaviUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gurunaviUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FBE2F6B7C61653AE728DBE /* Pods-gurunavi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunavi.release.xcconfig"; path = "Pods/Target Support Files/Pods-gurunavi/Pods-gurunavi.release.xcconfig"; sourceTree = "<group>"; };
 		83EE9863ECE5764B91657786 /* Pods-gurunaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunaviUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gurunaviUITests/Pods-gurunaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		2019518D200B2F6200C28217 /* gurunavi */ = {
 			isa = PBXGroup;
 			children = (
+				201951C8200BB19500C28217 /* resources */,
 				2019518E200B2F6200C28217 /* AppDelegate.swift */,
 				20195190200B2F6200C28217 /* ViewController.swift */,
 				20195192200B2F6200C28217 /* Main.storyboard */,
@@ -152,6 +155,14 @@
 				201951B0200B2F6200C28217 /* Info.plist */,
 			);
 			path = gurunaviUITests;
+			sourceTree = "<group>";
+		};
+		201951C8200BB19500C28217 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				201951C9200BB1DB00C28217 /* dinner.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		900CDE9A4C385C7DC667B9C2 /* Pods */ = {
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20195199200B2F6200C28217 /* LaunchScreen.storyboard in Resources */,
+				201951CA200BB1DB00C28217 /* dinner.png in Resources */,
 				20195196200B2F6200C28217 /* Assets.xcassets in Resources */,
 				20195194200B2F6200C28217 /* Main.storyboard in Resources */,
 			);
