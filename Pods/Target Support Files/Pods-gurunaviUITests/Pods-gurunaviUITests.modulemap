@@ -1,0 +1,6 @@
+framework module Pods_gurunaviUITests {
+  umbrella header "Pods-gurunaviUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
