@@ -41,7 +41,6 @@ class DataRequest {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
                 return
             }
-            
             print(json["total_hit_count"], "件該当しました")
             
             if reset { self.delegate.searchResult = [] }
@@ -49,7 +48,11 @@ class DataRequest {
             for rest in json["rest"] {
                 let data:Dictionary = [
                     "name" : rest.1["name"].string,
-                    "imageURL" : rest.1["image_url"]["shop_image1"].string
+                    "imageURL" : rest.1["image_url"]["shop_image1"].string,
+                    "access_line" : rest.1["access"]["line"].string,
+                    "access_station" : rest.1["access"]["station"].string,
+                    "access_station_exit" : rest.1["access"]["station_exit"].string,
+                    "access_walk" : rest.1["access"]["walk"].string
                 ]
                 self.delegate.searchResult.append(data)
             }

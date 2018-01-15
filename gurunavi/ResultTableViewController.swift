@@ -49,11 +49,14 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
 
+        //店舗名------------------------
         let name:String = (self.delegate.searchResult[indexPath.row]["name"]! as? String)!
         cell.tenpoText.text = name
+        //-----------------------------
         
+        //画像--------------------------
         if let imageurl:String = (self.delegate.searchResult[indexPath.row]["imageURL"]! as? String){
-        //画像があれば店舗画像、なければデフォルト
+            //画像があれば店舗画像、なければデフォルト
             let imageURL:URL = URL(string:imageurl)!
             let imageData = try? Data(contentsOf: imageURL)
             let image = UIImage(data:imageData!)
@@ -65,6 +68,24 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
 
             cell.topImage.image = dinnerImage
         }
+        //------------------------------
+        
+        //アクセス------------------------
+        var access:String = (self.delegate.searchResult[indexPath.row]["access_line"] as? String) ?? ""
+        
+        if let station = (self.delegate.searchResult[indexPath.row]["access_station"] as? String){
+            access = access + station + " "
+        }
+        if let exit = (self.delegate.searchResult[indexPath.row]["access_exit"] as? String){
+            access = access + exit + "番出口から"
+        }
+        if let walk = (self.delegate.searchResult[indexPath.row]["access_walk"] as? String){
+            access = access + "から" + walk + "分"
+        }
+        
+        cell.accessText.text = access
+        //------------------------------
+        
         return cell
     }
     

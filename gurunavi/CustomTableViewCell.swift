@@ -12,5 +12,6 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tenpoText: UILabel!
     @IBOutlet weak var topImage: UIImageView!
+    @IBOutlet weak var accessText: UILabel!
     
 }

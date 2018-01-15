@@ -168,6 +168,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="accessText" destination="OW3-rP-YlD" id="NKv-tq-0VT"/>
                                             <outlet property="tenpoText" destination="hPx-lB-uK1" id="sSo-Zk-B6h"/>
                                             <outlet property="topImage" destination="NTL-eZ-9c1" id="hjh-N2-vUz"/>
                                         </connections>
