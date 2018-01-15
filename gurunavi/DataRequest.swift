@@ -22,8 +22,8 @@ class DataRequest {
         let params:Parameters = [
             "keyid":APIKey,
             "format":"json",
-            "latitude":35.140315,
-            "longitude":136.829216,
+            "latitude":self.delegate.userLatitude,
+            "longitude":self.delegate.userLongitude,
             "range":3
         ]
         

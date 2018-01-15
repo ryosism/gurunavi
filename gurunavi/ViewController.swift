@@ -7,18 +7,56 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var keywordTextForm: UITextField!
     @IBOutlet weak var gpsSwitch: UISwitch!
     @IBOutlet weak var addressText: UILabel!
     @IBOutlet weak var searchButton: UIButton!
     
+    var locationManager: CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
 
+        let status = CLLocationManager.authorizationStatus()
+        //認証ダイアログを表示
+        if(status == CLAuthorizationStatus.notDetermined) {
+            self.locationManager?.requestAlwaysAuthorization()
+        }
+        //精度
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        //更新頻度(メートル)
+        locationManager?.distanceFilter = 100
+        locationManager?.startUpdatingLocation()
+        
     }
+    
+    // 位置情報取得に成功したときに呼び出されるデリゲート.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userdata = UserDataStorage()
+        
+        // 緯度・経度の表示.
+        guard let gps = manager.location?.coordinate else{
+            self.addressText.text = "現在地を取得できませんでした"
+            return
+        }
+        self.addressText.text = "緯度 : \(gps.latitude)\n経度 : \(gps.longitude)"
+        userdata.userLatitude = Float(gps.latitude)
+        userdata.userLongitude = Float(gps.longitude)
+    }
+    
+    @IBAction func pushedSearchButton(_ sender: Any) {
+        
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,4 +65,3 @@ class ViewController: UIViewController {
 
 
 }
-

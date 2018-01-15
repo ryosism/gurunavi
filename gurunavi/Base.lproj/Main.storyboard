@@ -74,6 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="この条件で検索"/>
                                 <connections>
+                                    <action selector="pushedSearchButton:" destination="Huf-zN-1nN" eventType="touchUpInside" id="vix-Jg-xM7"/>
                                     <segue destination="hQf-ta-WZ5" kind="show" id="6wq-nG-pqQ"/>
                                 </connections>
                             </button>
@@ -125,19 +126,13 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="181" id="ieJ-2G-kUN" customClass="CustomTableViewCell" customModule="gurunavi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="153" id="ieJ-2G-kUN" customClass="CustomTableViewCell" customModule="gurunavi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ieJ-2G-kUN" id="dVN-S3-pBy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="152.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-eZ-9c1">
-                                                    <rect key="frame" x="14" y="46" width="124" height="124"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="124" id="N3T-Pc-43J"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店舗名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-lB-uK1">
                                                     <rect key="frame" x="14" y="11" width="347" height="27"/>
                                                     <constraints>
@@ -147,6 +142,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-eZ-9c1">
+                                                    <rect key="frame" x="14" y="46" width="95" height="95"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="95" id="N3T-Pc-43J"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="centerX" secondItem="dVN-S3-pBy" secondAttribute="centerX" id="Aa5-v2-Ov9"/>
@@ -154,7 +155,7 @@
                                                 <constraint firstItem="NTL-eZ-9c1" firstAttribute="top" secondItem="hPx-lB-uK1" secondAttribute="bottom" constant="8" symbolic="YES" id="Cf4-Mz-Nbm"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="leading" id="d8x-Pn-hjR"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="dVN-S3-pBy" secondAttribute="leadingMargin" constant="-1" id="nRi-KR-GwO"/>
-                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="bottom" secondItem="dVN-S3-pBy" secondAttribute="bottomMargin" id="pZf-EF-lve"/>
+                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="bottom" secondItem="dVN-S3-pBy" secondAttribute="bottomMargin" constant="-1" id="pZf-EF-lve"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
