@@ -43,12 +43,12 @@ class DataRequest {
             
             for rest in json["rest"] {
                 let data:Dictionary = [
-                    "name" : rest.1["name"],
-                    "imageURL" : rest.1["image_url"]["shop_image1"]
+                    "name" : rest.1["name"].string,
+                    "imageURL" : rest.1["image_url"]["shop_image1"].string
                 ]
                 self.delegate.searchResult.append(data)
             }
-            print(self.delegate.searchResult)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         }
     }
 }
