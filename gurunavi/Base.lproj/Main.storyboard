@@ -147,12 +147,22 @@
                                                         <constraint firstAttribute="width" constant="95" id="N3T-Pc-43J"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アクセス" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-rP-YlD">
+                                                    <rect key="frame" x="142" y="46" width="218" height="95"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="bottom" secondItem="NTL-eZ-9c1" secondAttribute="bottom" id="2x4-Jx-9hg"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="centerX" secondItem="dVN-S3-pBy" secondAttribute="centerX" id="Aa5-v2-Ov9"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="top" secondItem="dVN-S3-pBy" secondAttribute="topMargin" id="C62-Em-QvF"/>
                                                 <constraint firstItem="NTL-eZ-9c1" firstAttribute="top" secondItem="hPx-lB-uK1" secondAttribute="bottom" constant="8" symbolic="YES" id="Cf4-Mz-Nbm"/>
+                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="trailing" constant="33" id="MZq-WT-hCB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OW3-rP-YlD" secondAttribute="trailing" id="UaF-AI-oFY"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="leading" id="d8x-Pn-hjR"/>
+                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="top" secondItem="NTL-eZ-9c1" secondAttribute="top" id="fex-it-bkQ"/>
                                                 <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="dVN-S3-pBy" secondAttribute="leadingMargin" constant="-1" id="nRi-KR-GwO"/>
                                                 <constraint firstItem="NTL-eZ-9c1" firstAttribute="bottom" secondItem="dVN-S3-pBy" secondAttribute="bottomMargin" constant="-1" id="pZf-EF-lve"/>
                                             </constraints>
