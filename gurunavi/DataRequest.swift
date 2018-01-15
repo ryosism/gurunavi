@@ -29,7 +29,8 @@ class DataRequest {
         
         Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
             guard let object = response.result.value else {
-            print("情報が取得できませんでした")
+                print("情報が取得できませんでした")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
                 return
             }
             let json = JSON(object)
@@ -37,6 +38,7 @@ class DataRequest {
             
             if json["error"]["code"] == "600"{
                 print("該当なし")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
                 return
             }
             
