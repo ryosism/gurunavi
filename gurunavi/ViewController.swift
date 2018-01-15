@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var keywordTextForm: UITextField!
     @IBOutlet weak var gpsSwitch: UISwitch!
@@ -51,6 +52,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         delegate.userLatitude = Float(gps.latitude)
         delegate.userLongitude = Float(gps.longitude)
     }
+    
+    @IBAction func searchButtonPushed(_ sender: Any) {
+        keywordTextForm.resignFirstResponder()
+        if let keyword = self.keywordTextForm.text{
+            self.delegate.userSearchKeyWord = keyword
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

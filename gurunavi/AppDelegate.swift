@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var searchResult = [Dictionary<String, Any>]()
     var userLatitude:Float = 0.0
     var userLongitude:Float = 0.0
+    var userSearchKeyWord = ""
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

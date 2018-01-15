@@ -48,10 +48,10 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
-
         //店舗名------------------------
-        let name:String = (self.delegate.searchResult[indexPath.row]["name"]! as? String)!
-        cell.tenpoText.text = name
+        if let name:String = (self.delegate.searchResult[indexPath.row]["name"]! as? String){
+            cell.tenpoText.text = name
+        }
         //-----------------------------
         
         //画像--------------------------

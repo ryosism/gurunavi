@@ -22,6 +22,7 @@ class DataRequest {
         let params:Parameters = [
             "keyid":APIKey,
             "format":"json",
+            "freeword":self.delegate.userSearchKeyWord,
             "latitude":self.delegate.userLatitude,
             "longitude":self.delegate.userLongitude,
             "range":3
@@ -34,7 +35,7 @@ class DataRequest {
                 return
             }
             let json = JSON(object)
-            print(json)
+//            print(json)
             
             if json["error"]["code"] == "600"{
                 print("該当なし")
