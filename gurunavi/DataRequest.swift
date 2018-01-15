@@ -18,7 +18,7 @@ class DataRequest {
         // http://api.gnavi.co.jp/api/manual/restsearch/
         let APIKey:String = ""
         //-------------------------------------------------------
-        
+
         let params:Parameters = [
             "keyid":APIKey,
             "format":"json",
@@ -29,12 +29,15 @@ class DataRequest {
         
         Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
             guard let object = response.result.value else {
-                print("情報が取得できませんでした")
+            print("情報が取得できませんでした")
                 return
             }
             let json = JSON(object)
-            if json["total_hit_count"] == "0"{
+            print(json)
+            
+            if json["error"]["code"] == "600"{
                 print("該当なし")
+                return
             }
             
             print(json["total_hit_count"], "件該当しました")

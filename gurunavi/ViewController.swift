@@ -40,7 +40,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // 位置情報取得に成功したときに呼び出されるデリゲート.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userdata = UserDataStorage()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         
         // 緯度・経度の表示.
         guard let gps = manager.location?.coordinate else{
@@ -48,15 +48,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         self.addressText.text = "緯度 : \(gps.latitude)\n経度 : \(gps.longitude)"
-        userdata.userLatitude = Float(gps.latitude)
-        userdata.userLongitude = Float(gps.longitude)
+        delegate.userLatitude = Float(gps.latitude)
+        delegate.userLongitude = Float(gps.longitude)
     }
-    
-    @IBAction func pushedSearchButton(_ sender: Any) {
-        
-        
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

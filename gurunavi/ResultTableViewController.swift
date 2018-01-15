@@ -13,16 +13,27 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var resultTable: UITableView!
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
+    let noDataAlart = UIAlertController(title:"条件に一致する店舗が存在しません", message:"場所を変えるか、電波の良いところで再度お試しください。", preferredStyle: UIAlertControllerStyle.alert)
+    
+    let okButton = UIAlertAction(title:"OK", style:UIAlertActionStyle.default ,handler: {
+        (action: UIAlertAction!)in
+        print("OK")
+    })
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(ApplyData), name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         
         let datarequest = DataRequest()
         datarequest.request(reset: true)
+         
     }
     
     @objc func ApplyData(){
         resultTable.reloadData()
+        
+        self.noDataAlart.addAction(self.okButton)
+        self.present(self.noDataAlart, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

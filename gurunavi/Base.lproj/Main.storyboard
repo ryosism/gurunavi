@@ -74,7 +74,6 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="この条件で検索"/>
                                 <connections>
-                                    <action selector="pushedSearchButton:" destination="Huf-zN-1nN" eventType="touchUpInside" id="vix-Jg-xM7"/>
                                     <segue destination="hQf-ta-WZ5" kind="show" id="6wq-nG-pqQ"/>
                                 </connections>
                             </button>
