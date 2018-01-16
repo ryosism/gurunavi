@@ -23,7 +23,9 @@ class DetailViewController: UIViewController {
         if let name = (self.delegate.searchResult[index]["name"] as? String){
             nameLabel.text = name
         }
-        if let detail_text = (self.delegate.searchResult[index]["detail_text"] as? String){
+        if var detail_text = (self.delegate.searchResult[index]["detail_text"] as? String){
+            //<BR>があったのでここで置換
+            detail_text = detail_text.replacingOccurrences(of: "<BR>", with: "\n")
             detailTextView.text = detail_text
         }
         //画像--------------------------

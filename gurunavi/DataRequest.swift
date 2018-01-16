@@ -35,7 +35,7 @@ class DataRequest {
                 return
             }
             let json = JSON(object)
-            print(json)
+//            print(json)
             
             if json["error"]["code"] == "600"{
                 print("該当なし")
