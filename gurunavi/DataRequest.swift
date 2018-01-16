@@ -35,7 +35,7 @@ class DataRequest {
                 return
             }
             let json = JSON(object)
-//            print(json)
+            print(json)
             
             if json["error"]["code"] == "600"{
                 print("該当なし")
@@ -53,7 +53,10 @@ class DataRequest {
                     "access_line" : rest.1["access"]["line"].string,
                     "access_station" : rest.1["access"]["station"].string,
                     "access_station_exit" : rest.1["access"]["station_exit"].string,
-                    "access_walk" : rest.1["access"]["walk"].string
+                    "access_walk" : rest.1["access"]["walk"].string,
+                    "adress" : rest.1["adress"].string,
+                    "tel" : rest.1["tel"].string,
+                    "openTime" : rest.1["opentime"].string
                 ]
                 self.delegate.searchResult.append(data)
             }

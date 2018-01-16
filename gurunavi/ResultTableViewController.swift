@@ -89,6 +89,27 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailViewController = DetailViewController()
+        detailViewController.name = delegate.searchResult[indexPath.row]["name"] as! String
+        
+        if let adress = (self.delegate.searchResult[indexPath.row]["address"] as? String) {
+            detailViewController.address = adress
+        }
+        if let tel = (self.delegate.searchResult[indexPath.row]["tel"] as? String) {
+            detailViewController.tel = tel
+        }
+        if let openTime = (self.delegate.searchResult[indexPath.row]["opentime"] as? String) {
+            detailViewController.openTime = openTime
+        }
+        if let imageurl = (self.delegate.searchResult[indexPath.row]["imageURL"] as? String) {
+            detailViewController.imageurl = imageurl
+        }
+        
+        performSegue(withIdentifier: "toDetailView",sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

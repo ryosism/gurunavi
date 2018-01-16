@@ -10,8 +10,16 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var name:String = ""
+    var address:String = ""
+    var tel:String = ""
+    var openTime:String = ""
+    var imageurl:String = ""
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
     }
     
