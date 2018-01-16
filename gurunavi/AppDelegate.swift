@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userLatitude:Float = 0.0
     var userLongitude:Float = 0.0
     var userSearchKeyWord = ""
-
+    var selectedindex:Int!
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

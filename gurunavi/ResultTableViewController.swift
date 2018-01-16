@@ -12,6 +12,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var resultTable: UITableView!
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    var selectedIndex:Int!
     
     let noDataAlart = UIAlertController(title:"条件に一致する店舗が存在しません", message:"場所を変えるか、電波の良いところで再度お試しください。", preferredStyle: UIAlertControllerStyle.alert)
     let okButton = UIAlertAction(title:"OK", style:UIAlertActionStyle.default ,handler: {
@@ -90,28 +91,18 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let detailViewController = DetailViewController()
-        detailViewController.name = delegate.searchResult[indexPath.row]["name"] as! String
-        
-        if let adress = (self.delegate.searchResult[indexPath.row]["address"] as? String) {
-            detailViewController.address = adress
-        }
-        if let tel = (self.delegate.searchResult[indexPath.row]["tel"] as? String) {
-            detailViewController.tel = tel
-        }
-        if let openTime = (self.delegate.searchResult[indexPath.row]["opentime"] as? String) {
-            detailViewController.openTime = openTime
-        }
-        if let imageurl = (self.delegate.searchResult[indexPath.row]["imageURL"] as? String) {
-            detailViewController.imageurl = imageurl
-        }
-        
+       
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "toDetailView",sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailViewController = segue.destination as! DetailViewController
+        detailViewController.selectedIndex = selectedIndex
+        delegate.selectedindex = selectedIndex
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 }

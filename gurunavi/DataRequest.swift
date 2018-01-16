@@ -54,7 +54,7 @@ class DataRequest {
                     "access_station" : rest.1["access"]["station"].string,
                     "access_station_exit" : rest.1["access"]["station_exit"].string,
                     "access_walk" : rest.1["access"]["walk"].string,
-                    "adress" : rest.1["adress"].string,
+                    "address" : rest.1["address"].string,
                     "tel" : rest.1["tel"].string,
                     "openTime" : rest.1["opentime"].string
                 ]

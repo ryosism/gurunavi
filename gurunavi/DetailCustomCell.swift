@@ -9,18 +9,23 @@
 import UIKit
 
 class DetailCustomCell: UITableViewController {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    let detailViewController = DetailViewController()
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var openTime: UILabel!
-    let detailViewController = DetailViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        name.text = detailViewController.name
-        address.text = detailViewController.address
-        openTime.text = detailViewController.openTime
+        print(detailViewController.selectedIndex)
+        
+        if let selectedName = (delegate.searchResult[delegate.selectedindex]["name"] as? String){
+            name.text = selectedName
+        }
+        if let selectedAddress = (delegate.searchResult[delegate.selectedindex]["address"] as? String){
+            address.text = selectedAddress
+        }
     }
     
     override func didReceiveMemoryWarning() {

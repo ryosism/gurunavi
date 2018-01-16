@@ -9,18 +9,12 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    var selectedIndex:Int!
     
-    var name:String = ""
-    var address:String = ""
-    var tel:String = ""
-    var openTime:String = ""
-    var imageurl:String = ""
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
     }
     
     override func didReceiveMemoryWarning() {
