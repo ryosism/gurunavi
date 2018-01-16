@@ -134,17 +134,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="152.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店舗名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-lB-uK1">
-                                                    <rect key="frame" x="14" y="11" width="314" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="Kx5-2H-eJb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-eZ-9c1">
-                                                    <rect key="frame" x="14" y="46" width="95" height="95"/>
+                                                    <rect key="frame" x="15" y="29" width="95" height="95"/>
                                                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="NTL-eZ-9c1" secondAttribute="height" multiplier="1:1" id="C1Y-Cn-m63"/>
@@ -152,23 +143,32 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アクセス" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-rP-YlD">
-                                                    <rect key="frame" x="142" y="46" width="192" height="95"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="118" y="82" width="192" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店舗名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-lB-uK1">
+                                                    <rect key="frame" x="118" y="29" width="224" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="63" id="Kx5-2H-eJb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="OW3-rP-YlD" firstAttribute="bottom" secondItem="NTL-eZ-9c1" secondAttribute="bottom" id="2x4-Jx-9hg"/>
-                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="centerX" secondItem="dVN-S3-pBy" secondAttribute="centerX" id="Aa5-v2-Ov9"/>
-                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="top" secondItem="dVN-S3-pBy" secondAttribute="topMargin" id="C62-Em-QvF"/>
-                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="top" secondItem="hPx-lB-uK1" secondAttribute="bottom" constant="8" symbolic="YES" id="Cf4-Mz-Nbm"/>
-                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="trailing" constant="33" id="MZq-WT-hCB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="OW3-rP-YlD" secondAttribute="trailing" id="UaF-AI-oFY"/>
-                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="leading" id="d8x-Pn-hjR"/>
-                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="top" secondItem="NTL-eZ-9c1" secondAttribute="top" id="fex-it-bkQ"/>
-                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="dVN-S3-pBy" secondAttribute="leadingMargin" constant="-1" id="nRi-KR-GwO"/>
-                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="bottom" secondItem="dVN-S3-pBy" secondAttribute="bottomMargin" constant="-1" id="pZf-EF-lve"/>
+                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="centerX" secondItem="dVN-S3-pBy" secondAttribute="centerX" constant="59" id="Aa5-v2-Ov9"/>
+                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="top" secondItem="dVN-S3-pBy" secondAttribute="topMargin" constant="18" id="C62-Em-QvF"/>
+                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="top" secondItem="hPx-lB-uK1" secondAttribute="bottom" constant="-63" id="Cf4-Mz-Nbm"/>
+                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="trailing" constant="8" id="MZq-WT-hCB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OW3-rP-YlD" secondAttribute="trailing" constant="24" id="UaF-AI-oFY"/>
+                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="NTL-eZ-9c1" secondAttribute="leading" constant="103" id="d8x-Pn-hjR"/>
+                                                <constraint firstItem="OW3-rP-YlD" firstAttribute="top" secondItem="NTL-eZ-9c1" secondAttribute="top" constant="53" id="fex-it-bkQ"/>
+                                                <constraint firstItem="hPx-lB-uK1" firstAttribute="leading" secondItem="dVN-S3-pBy" secondAttribute="leadingMargin" constant="103" id="nRi-KR-GwO"/>
+                                                <constraint firstItem="NTL-eZ-9c1" firstAttribute="bottom" secondItem="dVN-S3-pBy" secondAttribute="bottomMargin" constant="-18" id="pZf-EF-lve"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
