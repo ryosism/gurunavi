@@ -27,7 +27,9 @@ class DetailCustomCell: UITableViewController {
         if let telText = (delegate.searchResult[index]["tel"] as? String){
             tel.text = telText
         }
-        if let openTimetext = (delegate.searchResult[index]["openTime"] as? String){
+        if var openTimetext = (delegate.searchResult[index]["openTime"] as? String){
+            //<BR>が入ってる店があったので改行に置換
+            openTimetext = openTimetext.replacingOccurrences(of: "<BR>", with: "\n")
             openTime.text = openTimetext
         }
     }
