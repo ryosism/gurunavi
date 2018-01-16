@@ -13,8 +13,8 @@ class DetailCustomCell: UITableViewController {
     let detailViewController = DetailViewController()
     
     @IBOutlet weak var address: UITextView!
-    @IBOutlet weak var tel: UILabel!
-    @IBOutlet weak var openTime: UILabel!
+    @IBOutlet weak var tel: UITextView!
+    @IBOutlet weak var openTime: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

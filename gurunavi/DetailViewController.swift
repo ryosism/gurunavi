@@ -27,6 +27,8 @@ class DetailViewController: UIViewController {
             //<BR>があったのでここで置換
             detail_text = detail_text.replacingOccurrences(of: "<BR>", with: "\n")
             detailTextView.text = detail_text
+        }else{
+            detailTextView.text = "※詳細情報がありません※"
         }
         //画像--------------------------
         if let imageurl:String = (self.delegate.searchResult[index]["imageURL"]! as? String){

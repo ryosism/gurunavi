@@ -224,7 +224,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-Ly-fA6">
                                 <rect key="frame" x="16" y="74" width="343" height="42"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -234,9 +234,10 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-DR-Znu">
-                                <rect key="frame" x="0.0" y="456" width="375" height="151"/>
+                                <rect key="frame" x="0.0" y="456" width="375" height="172"/>
                                 <connections>
                                     <segue destination="Igr-Y0-yUW" kind="embed" id="c6u-0M-dbn"/>
                                 </connections>
@@ -251,14 +252,14 @@
                             <constraint firstItem="fwj-Ly-fA6" firstAttribute="trailing" secondItem="tw6-OP-t3w" secondAttribute="trailing" id="RW2-xv-702"/>
                             <constraint firstItem="o0L-DR-Znu" firstAttribute="top" secondItem="uN5-SK-gOT" secondAttribute="bottom" constant="8" symbolic="YES" id="Rcs-Aa-R8x"/>
                             <constraint firstItem="uN5-SK-gOT" firstAttribute="trailing" secondItem="tw6-OP-t3w" secondAttribute="trailing" id="WJQ-eb-h7l"/>
-                            <constraint firstItem="tw6-OP-t3w" firstAttribute="top" secondItem="o0L-DR-Znu" secondAttribute="bottom" constant="-483" id="WQH-Uu-O0n"/>
+                            <constraint firstItem="tw6-OP-t3w" firstAttribute="top" secondItem="o0L-DR-Znu" secondAttribute="bottom" constant="-504" id="WQH-Uu-O0n"/>
                             <constraint firstItem="sJk-3N-rnv" firstAttribute="trailing" secondItem="o0L-DR-Znu" secondAttribute="trailing" id="X4q-rS-bqg"/>
                             <constraint firstItem="sJk-3N-rnv" firstAttribute="leading" secondItem="T3d-ol-qZc" secondAttribute="leading" id="bEo-Nb-H1j"/>
                             <constraint firstItem="fwj-Ly-fA6" firstAttribute="top" secondItem="sJk-3N-rnv" secondAttribute="bottom" constant="10" id="cbC-KA-pho"/>
                             <constraint firstItem="fwj-Ly-fA6" firstAttribute="leading" secondItem="tw6-OP-t3w" secondAttribute="leading" id="ekN-Z4-Dvx"/>
                             <constraint firstItem="uN5-SK-gOT" firstAttribute="leading" secondItem="tw6-OP-t3w" secondAttribute="leading" id="fgb-Ox-SGR"/>
                             <constraint firstItem="o0L-DR-Znu" firstAttribute="top" secondItem="K7n-bs-jv7" secondAttribute="top" constant="392" id="kBo-uA-ajc"/>
-                            <constraint firstItem="K7n-bs-jv7" firstAttribute="bottom" secondItem="o0L-DR-Znu" secondAttribute="bottom" constant="60" id="kz6-rt-raW"/>
+                            <constraint firstItem="K7n-bs-jv7" firstAttribute="bottom" secondItem="o0L-DR-Znu" secondAttribute="bottom" constant="39" id="kz6-rt-raW"/>
                             <constraint firstAttribute="trailing" secondItem="sJk-3N-rnv" secondAttribute="trailing" id="tTi-YL-ZiQ"/>
                             <constraint firstItem="o0L-DR-Znu" firstAttribute="top" secondItem="sJk-3N-rnv" secondAttribute="bottom" constant="392" id="vMp-Q4-tfX"/>
                             <constraint firstItem="tw6-OP-t3w" firstAttribute="centerX" secondItem="o0L-DR-Znu" secondAttribute="centerX" id="xGb-AL-w26"/>
@@ -281,7 +282,7 @@
             <objects>
                 <tableViewController id="Igr-Y0-yUW" customClass="DetailCustomCell" customModule="gurunavi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Er-Zs-O3P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -296,70 +297,75 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFV-6E-ga7">
-                                                    <rect key="frame" x="16" y="19" width="35" height="21"/>
+                                                    <rect key="frame" x="16" y="22" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="d06-3u-Z1j">
-                                                    <rect key="frame" x="90" y="10" width="269" height="44"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="topRight" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="d06-3u-Z1j">
+                                                    <rect key="frame" x="99" y="11" width="260" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fFV-6E-ga7" firstAttribute="leading" secondItem="eaE-zD-qme" secondAttribute="leadingMargin" id="3nj-dJ-5Fp"/>
-                                                <constraint firstItem="fFV-6E-ga7" firstAttribute="top" secondItem="eaE-zD-qme" secondAttribute="topMargin" constant="8" id="6qp-4K-fQB"/>
-                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="centerY" secondItem="eaE-zD-qme" secondAttribute="centerY" id="Fxs-Zy-tvd"/>
+                                                <constraint firstItem="fFV-6E-ga7" firstAttribute="top" secondItem="eaE-zD-qme" secondAttribute="topMargin" constant="11" id="6qp-4K-fQB"/>
+                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="centerY" secondItem="eaE-zD-qme" secondAttribute="centerY" constant="0.75" id="Fxs-Zy-tvd"/>
                                                 <constraint firstItem="d06-3u-Z1j" firstAttribute="trailing" secondItem="eaE-zD-qme" secondAttribute="trailingMargin" id="bYv-E9-LPW"/>
-                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="leading" secondItem="fFV-6E-ga7" secondAttribute="trailing" constant="39" id="feT-vi-6bP"/>
-                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="bottom" secondItem="eaE-zD-qme" secondAttribute="bottomMargin" id="pkL-jy-y4m"/>
+                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="leading" secondItem="fFV-6E-ga7" secondAttribute="trailing" constant="48" id="feT-vi-6bP"/>
+                                                <constraint firstItem="d06-3u-Z1j" firstAttribute="bottom" secondItem="eaE-zD-qme" secondAttribute="bottomMargin" constant="1" id="pkL-jy-y4m"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" editingAccessoryType="detailButton" textLabel="cOT-5R-yzI" detailTextLabel="5eJ-7F-8u4" style="IBUITableViewCellStyleValue1" id="fgN-aU-cYB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" editingAccessoryType="detailButton" id="fgN-aU-cYB">
                                         <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fgN-aU-cYB" id="35P-M4-gob">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="電話番号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cOT-5R-yzI">
-                                                    <rect key="frame" x="15" y="12" width="69.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="電話番号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-yV-FTC">
+                                                    <rect key="frame" x="16" y="11" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5eJ-7F-8u4">
-                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="topRight" fixedFrame="YES" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="Lsg-8b-oqd">
+                                                    <rect key="frame" x="99" y="6" width="260" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                                </textView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="d0q-bg-9xg" detailTextLabel="YTd-zK-hOa" style="IBUITableViewCellStyleValue1" id="33G-qJ-77a">
-                                        <rect key="frame" x="0.0" y="109" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="65" id="33G-qJ-77a">
+                                        <rect key="frame" x="0.0" y="109" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="33G-qJ-77a" id="OwQ-8k-7Ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="営業時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d0q-bg-9xg">
-                                                    <rect key="frame" x="15" y="12" width="69.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YTd-zK-hOa">
-                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="topRight" fixedFrame="YES" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="csb-pE-caU">
+                                                    <rect key="frame" x="99" y="10" width="260" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="営業時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqI-xJ-HZW">
+                                                    <rect key="frame" x="16" y="22" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -378,8 +384,8 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="TDh-Ju-1ge"/>
                     <connections>
                         <outlet property="address" destination="d06-3u-Z1j" id="50R-Ba-LIl"/>
-                        <outlet property="openTime" destination="YTd-zK-hOa" id="LRj-7F-DF2"/>
-                        <outlet property="tel" destination="5eJ-7F-8u4" id="XWZ-Hb-V5c"/>
+                        <outlet property="openTime" destination="csb-pE-caU" id="veY-rP-wUO"/>
+                        <outlet property="tel" destination="Lsg-8b-oqd" id="aWI-8Z-4eM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RjN-UZ-Tn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
