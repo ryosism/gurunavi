@@ -58,7 +58,7 @@
 		201951AE200B2F6200C28217 /* gurunaviUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gurunaviUITests.swift; sourceTree = "<group>"; };
 		201951B0200B2F6200C28217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201951BE200B991000C28217 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		201951C2200BA42600C28217 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultTableViewController.swift; path = "/Users/ryou/Documents/Xcode/Xcode Projects/動作確認用/gurunavi/gurunavi/ResultTableViewController.swift"; sourceTree = "<absolute>"; };
+		201951C2200BA42600C28217 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		201951C4200BAAF900C28217 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		201951C6200BABD600C28217 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		201951C9200BB1DB00C28217 /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner.png; sourceTree = "<group>"; };

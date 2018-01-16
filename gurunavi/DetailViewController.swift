@@ -10,7 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    var selectedIndex:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()

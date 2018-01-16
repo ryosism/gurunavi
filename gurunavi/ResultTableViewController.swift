@@ -22,7 +22,6 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Notificationの追加
         //APIから情報を更新した時に発火
         NotificationCenter.default.addObserver(self, selector: #selector(ApplyData), name: NSNotification.Name(rawValue: "ApplyData"), object: nil)

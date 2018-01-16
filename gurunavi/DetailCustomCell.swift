@@ -18,8 +18,6 @@ class DetailCustomCell: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(detailViewController.selectedIndex)
-        
         if let selectedName = (delegate.searchResult[delegate.selectedindex]["name"] as? String){
             name.text = selectedName
         }
