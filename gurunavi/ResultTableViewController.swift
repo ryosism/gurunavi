@@ -71,33 +71,20 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         //------------------------------
         
         //アクセス------------------------
-        var access:String = (self.delegate.searchResult[indexPath.row]["access_line"] as? String) ?? ""
-        
-        if let station = (self.delegate.searchResult[indexPath.row]["access_station"] as? String){
-            access = access + station + " "
+        if let access = delegate.searchResult[indexPath.row]["access"]! as? String {
+            cell.accessText.text = access
         }
-        if let exit = (self.delegate.searchResult[indexPath.row]["access_exit"] as? String){
-            access = access + exit + "番出口から"
-        }
-        if let walk = (self.delegate.searchResult[indexPath.row]["access_walk"] as? String){
-            access = access + "から" + walk + "分"
-        }
-        
-        cell.accessText.text = access
         //------------------------------
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "toDetailView",sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailViewController = segue.destination as! DetailViewController
-        detailViewController.selectedIndex = selectedIndex
         delegate.selectedindex = selectedIndex
     }
     

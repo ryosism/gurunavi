@@ -25,7 +25,7 @@ class DataRequest {
             "freeword":self.delegate.userSearchKeyWord,
             "latitude":self.delegate.userLatitude,
             "longitude":self.delegate.userLongitude,
-            "range":3
+            "range":4
         ]
         
         Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
@@ -47,20 +47,35 @@ class DataRequest {
             if reset { self.delegate.searchResult = [] }
             
             for rest in json["rest"] {
+                
+                //辞書型配列のデータが複雑すぎたみたいなのでここでアクセスの文章を完成させ枠を節約
+                var access:String = rest.1["access"]["line"].string ?? ""
+                
+                if let station = rest.1["access"]["station"].string {
+                    access = access + station + " "
+                }
+                if let exit = rest.1["access"]["station_exit"].string {
+                    access = access + exit + "番出口"
+                }
+                if let walk = rest.1["access"]["walk"].string {
+                    access = access + "から" + walk + "分"
+                }
+                
                 let data:Dictionary = [
                     "name" : rest.1["name"].string,
                     "imageURL" : rest.1["image_url"]["shop_image1"].string,
-                    "access_line" : rest.1["access"]["line"].string,
-                    "access_station" : rest.1["access"]["station"].string,
-                    "access_station_exit" : rest.1["access"]["station_exit"].string,
-                    "access_walk" : rest.1["access"]["walk"].string,
+                    "access" : access,
                     "address" : rest.1["address"].string,
                     "tel" : rest.1["tel"].string,
-                    "openTime" : rest.1["opentime"].string
+                    "openTime" : rest.1["opentime"].string,
+                    "detail_text" : rest.1["pr"]["pr_long"].string
                 ]
+                
                 self.delegate.searchResult.append(data)
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         }
     }
 }
+
+

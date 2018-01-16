@@ -12,17 +12,23 @@ class DetailCustomCell: UITableViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     let detailViewController = DetailViewController()
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var address: UITextView!
+    @IBOutlet weak var tel: UILabel!
+    @IBOutlet weak var openTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let selectedName = (delegate.searchResult[delegate.selectedindex]["name"] as? String){
-            name.text = selectedName
+        let index:Int = delegate.selectedindex
+        
+        if let addressText = (delegate.searchResult[index]["address"] as? String){
+            address.text = addressText
         }
-        if let selectedAddress = (delegate.searchResult[delegate.selectedindex]["address"] as? String){
-            address.text = selectedAddress
+        if let telText = (delegate.searchResult[index]["tel"] as? String){
+            tel.text = telText
+        }
+        if let openTimetext = (delegate.searchResult[index]["openTime"] as? String){
+            openTime.text = openTimetext
         }
     }
     

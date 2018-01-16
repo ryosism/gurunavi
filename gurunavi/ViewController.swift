@@ -39,11 +39,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    // 位置情報取得に成功したときに呼び出されるデリゲート.
+    // 位置情報取得に成功したときに呼び出されるデリゲート
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         
-        // 緯度・経度の表示.
+        // 緯度・経度の表示
         guard let gps = manager.location?.coordinate else{
             self.addressText.text = "現在地を取得できませんでした"
             return
@@ -54,6 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func searchButtonPushed(_ sender: Any) {
+        delegate.searchResult = []
         keywordTextForm.resignFirstResponder()
         if let keyword = self.keywordTextForm.text{
             self.delegate.userSearchKeyWord = keyword

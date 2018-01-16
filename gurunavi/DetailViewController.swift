@@ -11,8 +11,36 @@ import UIKit
 class DetailViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let index:Int = delegate.selectedindex
+        
+        if let name = (self.delegate.searchResult[index]["name"] as? String){
+            nameLabel.text = name
+        }
+        if let detail_text = (self.delegate.searchResult[index]["detail_text"] as? String){
+            detailTextView.text = detail_text
+        }
+        //画像--------------------------
+        if let imageurl:String = (self.delegate.searchResult[index]["imageURL"]! as? String){
+            //画像があれば店舗画像、なければデフォルト
+            let imageURL:URL = URL(string:imageurl)!
+            let imageData = try? Data(contentsOf: imageURL)
+            let image = UIImage(data:imageData!)
+            
+            imageView.image = image
+        }else{
+            let dinnerpngPath = Bundle.main.path(forResource: "dinner", ofType: "png")
+            let dinnerImage = UIImage(contentsOfFile: dinnerpngPath!)
+            
+            imageView.image = dinnerImage
+        }
+        //------------------------------
         
     }
     
