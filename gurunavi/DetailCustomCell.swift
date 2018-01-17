@@ -23,14 +23,22 @@ class DetailCustomCell: UITableViewController {
         
         if let addressText = (delegate.searchResult[index]["address"] as? String){
             address.text = addressText
+        }else{
+            address.text = "詳細情報がありません"
         }
+        
         if let telText = (delegate.searchResult[index]["tel"] as? String){
             tel.text = telText
+        }else{
+            tel.text = "詳細情報がありません"
         }
+        
         if var openTimetext = (delegate.searchResult[index]["openTime"] as? String){
             //<BR>が入ってる店があったので改行に置換
             openTimetext = openTimetext.replacingOccurrences(of: "<BR>", with: "\n")
             openTime.text = openTimetext
+        }else{
+            openTime.text = "詳細情報がありません"
         }
     }
     
