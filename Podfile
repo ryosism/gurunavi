@@ -9,6 +9,7 @@ target 'gurunavi' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
   target 'gurunaviTests' do
     inherit! :search_paths

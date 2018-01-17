@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import SVProgressHUD
 
 class ResultTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -85,6 +86,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        SVProgressHUD.show()
         delegate.selectedindex = selectedIndex
     }
     

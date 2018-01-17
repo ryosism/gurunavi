@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DetailViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,7 +20,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     
         let index:Int = delegate.selectedindex
-        
+
         if let name = (self.delegate.searchResult[index]["name"] as? String){
             nameLabel.text = name
         }
@@ -36,18 +37,23 @@ class DetailViewController: UIViewController {
             let imageURL:URL = URL(string:imageurl)!
             let imageData = try? Data(contentsOf: imageURL)
             let image = UIImage(data:imageData!)
-            
+
             imageView.image = image
         }else{
             let dinnerpngPath = Bundle.main.path(forResource: "dinner", ofType: "png")
             let dinnerImage = UIImage(contentsOfFile: dinnerpngPath!)
-            
+
             imageView.image = dinnerImage
         }
         //------------------------------
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SVProgressHUD.dismiss()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 

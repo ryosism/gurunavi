@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FB74072DFE347D29CDD96EA97EF9EAD"
+               BlueprintIdentifier = "2684E7F4D68E7A666503FE1F47B139B4"
                BuildableName = "Pods_gurunavi.framework"
                BlueprintName = "Pods-gurunavi"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3FB74072DFE347D29CDD96EA97EF9EAD"
+            BlueprintIdentifier = "2684E7F4D68E7A666503FE1F47B139B4"
             BuildableName = "Pods_gurunavi.framework"
             BlueprintName = "Pods-gurunavi"
             ReferencedContainer = "container:Pods.xcodeproj">
