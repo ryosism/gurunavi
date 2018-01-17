@@ -13,9 +13,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let delegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var keywordTextForm: UITextField!
-    @IBOutlet weak var gpsSwitch: UISwitch!
     @IBOutlet weak var addressText: UILabel!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var rangeSlider: UISlider!
+    @IBOutlet weak var rangeLabel: UILabel!
     
     var locationManager: CLLocationManager?
     
@@ -37,6 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager?.distanceFilter = 100
         locationManager?.startUpdatingLocation()
         
+        rangeLabel.text = "500m"
     }
     
     // 位置情報取得に成功したときに呼び出されるデリゲート
@@ -51,6 +53,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.addressText.text = "緯度 : \(gps.latitude)\n経度 : \(gps.longitude)"
         delegate.userLatitude = Float(gps.latitude)
         delegate.userLongitude = Float(gps.longitude)
+    }
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        
+        delegate.range = Int(rangeSlider.value)
+        
+        switch delegate.range {
+        case 1:
+            rangeLabel.text = "300m"
+        case 2:
+            rangeLabel.text = "500m"
+        case 3:
+            rangeLabel.text = "1km"
+        case 4:
+            rangeLabel.text = "2km"
+        case 5:
+            rangeLabel.text = "5km"
+        default:
+            break
+        }
     }
     
     @IBAction func searchButtonPushed(_ sender: Any) {

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userLongitude:Float = 0.0
     var userSearchKeyWord = ""
     var selectedindex:Int!
+    var range:Int = 2
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

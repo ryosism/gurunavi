@@ -25,7 +25,7 @@ class DataRequest {
             "freeword":self.delegate.userSearchKeyWord,
             "latitude":self.delegate.userLatitude,
             "longitude":self.delegate.userLongitude,
-            "range":4
+            "range":self.delegate.range
         ]
         
         Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
