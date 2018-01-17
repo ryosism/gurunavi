@@ -22,6 +22,7 @@
 		201951CC200DAA5D00C28217 /* DetailCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201951CB200DAA5D00C28217 /* DetailCustomCell.swift */; };
 		51E944EEC0648AA369899D65 /* Pods_gurunaviTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36826875346DCA78DB9281A /* Pods_gurunaviTests.framework */; };
 		8ECE4E0C070651D300F65147 /* Pods_gurunaviUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254019DE3F479767E5BE9925 /* Pods_gurunaviUITests.framework */; };
+		9DC2A30B200F21C500924AF3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DC2A30A200F21C500924AF3 /* README.md */; };
 		B6AA4D28041FEC1290BF422E /* Pods_gurunavi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A4827DFACF80F3D6A19CD /* Pods_gurunavi.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		72FBE2F6B7C61653AE728DBE /* Pods-gurunavi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunavi.release.xcconfig"; path = "Pods/Target Support Files/Pods-gurunavi/Pods-gurunavi.release.xcconfig"; sourceTree = "<group>"; };
 		83EE9863ECE5764B91657786 /* Pods-gurunaviUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunaviUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gurunaviUITests/Pods-gurunaviUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		868253B67B6E32AA3C7F0AF8 /* Pods-gurunavi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunavi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gurunavi/Pods-gurunavi.debug.xcconfig"; sourceTree = "<group>"; };
+		9DC2A30A200F21C500924AF3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CB7FC5E2AAC3A3845DD518E6 /* Pods-gurunaviTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunaviTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gurunaviTests/Pods-gurunaviTests.release.xcconfig"; sourceTree = "<group>"; };
 		E36826875346DCA78DB9281A /* Pods_gurunaviTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gurunaviTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79473DE67C46513DE73816F /* Pods-gurunaviTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gurunaviTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gurunaviTests/Pods-gurunaviTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		2019518D200B2F6200C28217 /* gurunavi */ = {
 			isa = PBXGroup;
 			children = (
+				9DC2A30A200F21C500924AF3 /* README.md */,
 				201951C8200BB19500C28217 /* resources */,
 				2019518E200B2F6200C28217 /* AppDelegate.swift */,
 				20195190200B2F6200C28217 /* ViewController.swift */,
@@ -314,6 +317,7 @@
 			files = (
 				20195199200B2F6200C28217 /* LaunchScreen.storyboard in Resources */,
 				201951CA200BB1DB00C28217 /* dinner.png in Resources */,
+				9DC2A30B200F21C500924AF3 /* README.md in Resources */,
 				20195196200B2F6200C28217 /* Assets.xcassets in Resources */,
 				20195194200B2F6200C28217 /* Main.storyboard in Resources */,
 			);
