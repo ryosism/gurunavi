@@ -4,7 +4,7 @@
 
 アプリ名 ：gurunavi
 
-git      ：https://github.com/
+git      ：https://github.com/ryosism/gurunavi
 
 対象OS  ：iOS
 
