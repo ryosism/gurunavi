@@ -54,7 +54,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         //-----------------------------
         
         //画像--------------------------
-        if let imageurl:String = (self.delegate.searchResult[indexPath.row].imageURL){
+        if let imageurl:String = (self.delegate.searchResult[indexPath.row].imageURL?.shopImage){
             //画像があれば店舗画像、なければデフォルト
             let imageURL:URL = URL(string:imageurl)!
             let imageData = try? Data(contentsOf: imageURL)
@@ -71,8 +71,21 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         //アクセス------------------------
         if let access = delegate.searchResult[indexPath.row].access{
-            cell.accessText.text = access
+            // 文を整形
+            var fullAccess:String = ""
+            
+            if let station = access.station {
+                fullAccess = fullAccess + station + " "
+            }
+            if let exit = access.exit {
+                fullAccess = fullAccess + exit + "番出口"
+            }
+            if let walk = access.walk {
+                fullAccess = fullAccess + "から" + walk + "分"
+            }
+            cell.accessText.text = fullAccess
         }
+        
         //------------------------------
         
         return cell

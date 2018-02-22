@@ -28,62 +28,111 @@ class DataRequest {
             "range":self.delegate.range
         ]
         
-        Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
+        Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseData{ response in
             guard let object = response.result.value else {
                 print("情報が取得できませんでした")
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
                 return
             }
-            let json = JSON(object)
-//            print(json)
+            let Codabledata = try! JSONDecoder().decode(ResponceData.self, from: object)
             
-            if json["error"]["code"] == "600"{
-                print("該当なし")
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
-                return
-            }
-            print(json["total_hit_count"], "件該当しました")
+            print(Codabledata)
             
-            if reset { self.delegate.searchResult = [] }
+            self.delegate.searchResult = Codabledata.rest
             
-            for rest in json["rest"] {
-                
-                //辞書型配列のデータが複雑すぎたみたいなのでここでアクセスの文章を完成させ枠を節約
-                var access:String = rest.1["access"]["line"].string ?? ""
-                
-                if let station = rest.1["access"]["station"].string {
-                    access = access + station + " "
-                }
-                if let exit = rest.1["access"]["station_exit"].string {
-                    access = access + exit + "番出口"
-                }
-                if let walk = rest.1["access"]["walk"].string {
-                    access = access + "から" + walk + "分"
-                }
-                
-                let data = dataset(
-                    name : rest.1["name"].string!,
-                    imageURL : rest.1["image_url"]["shop_image1"].string,
-                    access : access,
-                    address : rest.1["address"].string,
-                    tel : rest.1["tel"].string,
-                    openTime : rest.1["opentime"].string,
-                    detail_text : rest.1["pr"]["pr_long"].string
-                )
-                
-                self.delegate.searchResult.append(data)
-            }
+//            if json["error"]["code"] == "600"{
+//                print("該当なし")
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
+//                return
+//            }
+//            print(json["total_hit_count"], "件該当しました")
+//            if reset { self.delegate.searchResult = [] }
+            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         }
     }
 }
 
-struct dataset:Codable {
-    var name : String
-    var imageURL : String?
-    var access : String?
+struct ResponceData:Codable {
+    var totalHitCount : String
+    var rest : [Rest]
+    
+    enum CodingKeys: String, CodingKey{
+        case totalHitCount = "total_hit_count"
+        case rest
+    }
+}
+
+struct Rest:Codable {
+    var name : String?
+    var access : Access?
     var address : String?
     var tel : String?
     var openTime : String?
-    var detail_text : String?
+    var pr : PR?
+    var imageURL : ImageURL?
+    
+    enum CodingKeys: String, CodingKey{
+        case name
+        case access
+        case address
+        case tel
+        case openTime = "opentime"
+        case pr
+        case imageURL = "image_url"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try? values.decode(String.self ,forKey: .name)
+        access = try? values.decode(Access.self ,forKey: .access)
+        address = try? values.decode(String.self ,forKey: .address)
+        tel = try? values.decode(String.self ,forKey: .tel)
+        openTime = try? values.decode(String.self ,forKey: .openTime)
+        pr = try? values.decode(PR.self ,forKey: .pr)
+        imageURL = try? values.decode(ImageURL.self ,forKey: .imageURL)
+    }
 }
+
+struct Access:Codable {
+    var station : String?
+    var exit : String?
+    var walk : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case station
+        case exit = "station_exit"
+        case walk
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        station = try? values.decode(String.self ,forKey: .station)
+        exit = try? values.decode(String.self ,forKey: .exit)
+        walk = try? values.decode(String.self ,forKey: .walk)
+    }
+}
+
+struct ImageURL:Codable {
+    var shopImage : String?
+    
+    enum CodingKeys: String, CodingKey{
+        case shopImage = "shop_image1"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.shopImage = try? values.decode(String.self ,forKey: .shopImage)
+    }
+}
+
+struct PR: Codable {
+    let prShort: String?
+    let prLong: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case prShort = "pr_short"
+        case prLong = "pr_long"
+    }
+}
+

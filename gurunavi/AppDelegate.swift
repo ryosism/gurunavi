@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var searchResult = [dataset]()
+    var searchResult = [Rest]()
     var userLatitude:Float = 0.0
     var userLongitude:Float = 0.0
     var userSearchKeyWord = ""
