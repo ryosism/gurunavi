@@ -14,10 +14,13 @@ class DetailTableViewController: UITableViewController {
     
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var tel: UITextView!
-    @IBOutlet weak var openTime: UITextView!
-    
+    @IBOutlet weak var openTime: UILabel!
+
     override final func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.tableView.estimatedRowHeight = 90
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         let index:Int = delegate.selectedindex
         

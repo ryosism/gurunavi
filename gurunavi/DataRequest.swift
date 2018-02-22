@@ -36,7 +36,7 @@ class DataRequest {
             }
             let Codabledata = try! JSONDecoder().decode(ResponceData.self, from: object)
             
-            print(Codabledata)
+//            print(Codabledata)
             
             self.delegate.searchResult = Codabledata.rest
             
