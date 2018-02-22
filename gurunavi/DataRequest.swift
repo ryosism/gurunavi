@@ -36,16 +36,14 @@ class DataRequest {
             }
             let Codabledata = try! JSONDecoder().decode(ResponceData.self, from: object)
             
-//            print(Codabledata)
-            
             self.delegate.searchResult = Codabledata.rest
             
-//            if json["error"]["code"] == "600"{
-//                print("該当なし")
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
-//                return
-//            }
-//            print(json["total_hit_count"], "件該当しました")
+            if (Int(Codabledata.totalHitCount) == 0){
+                print("該当なし")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
+                return
+            }
+            print(Codabledata.totalHitCount, "件該当しました")
 //            if reset { self.delegate.searchResult = [] }
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
