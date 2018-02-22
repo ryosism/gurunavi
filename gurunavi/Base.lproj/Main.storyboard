@@ -233,7 +233,7 @@
         <!--店舗詳細-->
         <scene sceneID="mxM-IX-mOe">
             <objects>
-                <viewController title="店舗詳細" id="Hfg-Bc-Kop" customClass="DetailViewController" customModule="gurunavi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="店舗詳細" id="Hfg-Bc-Kop" customClass="DetailContainerViewController" customModule="gurunavi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T3d-ol-qZc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -311,7 +311,7 @@
         <!--Root View Controller-->
         <scene sceneID="W2a-2G-xPM">
             <objects>
-                <tableViewController id="Igr-Y0-yUW" customClass="DetailCustomCell" customModule="gurunavi" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Igr-Y0-yUW" customClass="DetailTableViewController" customModule="gurunavi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Er-Zs-O3P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

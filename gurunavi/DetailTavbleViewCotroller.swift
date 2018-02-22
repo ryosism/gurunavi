@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DetailCustomCell: UITableViewController {
+class DetailTableViewController: UITableViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    let detailViewController = DetailViewController()
+    let detailViewController = DetailContainerViewController()
     
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var tel: UITextView!

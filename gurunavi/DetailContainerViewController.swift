@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class DetailViewController: UIViewController {
+class DetailContainerViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var nameLabel: UILabel!
