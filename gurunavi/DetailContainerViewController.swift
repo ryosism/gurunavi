@@ -21,10 +21,13 @@ class DetailContainerViewController: UIViewController {
     
         let index:Int = delegate.selectedindex
 
-        if let name = (self.delegate.searchResult[index]["name"] as? String){
-            nameLabel.text = name
-        }
-        if var detail_text = (self.delegate.searchResult[index]["detail_text"] as? String){
+//        if let name = (self.delegate.searchResult[index].name){
+//            nameLabel.text = name
+//        }
+        
+        nameLabel.text = self.delegate.searchResult[index].name
+        
+        if var detail_text = (self.delegate.searchResult[index].detail_text){
             //<BR>があったのでここで置換
             detail_text = detail_text.replacingOccurrences(of: "<BR>", with: "\n")
             detailTextView.text = detail_text
@@ -32,7 +35,7 @@ class DetailContainerViewController: UIViewController {
             detailTextView.text = "(詳細情報がありません)"
         }
         //画像--------------------------
-        if let imageurl:String = (self.delegate.searchResult[index]["imageURL"]! as? String){
+        if let imageurl:String = (self.delegate.searchResult[index].imageURL as? String){
             //画像があれば店舗画像、なければデフォルト
             let imageURL:URL = URL(string:imageurl)!
             let imageData = try? Data(contentsOf: imageURL)

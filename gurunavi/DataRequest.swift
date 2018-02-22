@@ -61,15 +61,15 @@ class DataRequest {
                     access = access + "から" + walk + "分"
                 }
                 
-                let data:Dictionary = [
-                    "name" : rest.1["name"].string,
-                    "imageURL" : rest.1["image_url"]["shop_image1"].string,
-                    "access" : access,
-                    "address" : rest.1["address"].string,
-                    "tel" : rest.1["tel"].string,
-                    "openTime" : rest.1["opentime"].string,
-                    "detail_text" : rest.1["pr"]["pr_long"].string
-                ]
+                let data = dataset(
+                    name : rest.1["name"].string!,
+                    imageURL : rest.1["image_url"]["shop_image1"].string,
+                    access : access,
+                    address : rest.1["address"].string,
+                    tel : rest.1["tel"].string,
+                    openTime : rest.1["opentime"].string,
+                    detail_text : rest.1["pr"]["pr_long"].string
+                )
                 
                 self.delegate.searchResult.append(data)
             }
@@ -78,4 +78,12 @@ class DataRequest {
     }
 }
 
-
+struct dataset:Codable {
+    var name : String
+    var imageURL : String?
+    var access : String?
+    var address : String?
+    var tel : String?
+    var openTime : String?
+    var detail_text : String?
+}

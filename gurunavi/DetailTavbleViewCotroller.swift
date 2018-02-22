@@ -21,19 +21,19 @@ class DetailTableViewController: UITableViewController {
         
         let index:Int = delegate.selectedindex
         
-        if let addressText = (delegate.searchResult[index]["address"] as? String){
+        if let addressText = (delegate.searchResult[index].address){
             address.text = addressText
         }else{
             address.text = "詳細情報がありません"
         }
         
-        if let telText = (delegate.searchResult[index]["tel"] as? String){
+        if let telText = (delegate.searchResult[index].tel){
             tel.text = telText
         }else{
             tel.text = "詳細情報がありません"
         }
         
-        if var openTimetext = (delegate.searchResult[index]["openTime"] as? String){
+        if var openTimetext = (delegate.searchResult[index].openTime){
             //<BR>が入ってる店があったので改行に置換
             openTimetext = openTimetext.replacingOccurrences(of: "<BR>", with: "\n")
             openTime.text = openTimetext

@@ -50,13 +50,11 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
     final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         //店舗名------------------------
-        if let name:String = (self.delegate.searchResult[indexPath.row]["name"]! as? String){
-            cell.tenpoText.text = name
-        }
+            cell.tenpoText.text = self.delegate.searchResult[indexPath.row].name
         //-----------------------------
         
         //画像--------------------------
-        if let imageurl:String = (self.delegate.searchResult[indexPath.row]["imageURL"]! as? String){
+        if let imageurl:String = (self.delegate.searchResult[indexPath.row].imageURL){
             //画像があれば店舗画像、なければデフォルト
             let imageURL:URL = URL(string:imageurl)!
             let imageData = try? Data(contentsOf: imageURL)
@@ -72,7 +70,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         //------------------------------
         
         //アクセス------------------------
-        if let access = delegate.searchResult[indexPath.row]["access"]! as? String {
+        if let access = delegate.searchResult[indexPath.row].access{
             cell.accessText.text = access
         }
         //------------------------------
