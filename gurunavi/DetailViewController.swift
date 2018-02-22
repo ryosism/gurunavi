@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detailTextView: UITextView!
     
-    override func viewDidLoad() {
+    override final func viewDidLoad() {
         super.viewDidLoad()
     
         let index:Int = delegate.selectedindex
@@ -49,12 +49,12 @@ class DetailViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override final func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         SVProgressHUD.dismiss()
     }
 
-    override func didReceiveMemoryWarning() {
+    override final func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }

@@ -16,7 +16,7 @@ class DetailCustomCell: UITableViewController {
     @IBOutlet weak var tel: UITextView!
     @IBOutlet weak var openTime: UITextView!
     
-    override func viewDidLoad() {
+    override final func viewDidLoad() {
         super.viewDidLoad()
         
         let index:Int = delegate.selectedindex
@@ -42,6 +42,6 @@ class DetailCustomCell: UITableViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
+    override final func didReceiveMemoryWarning() {
     }
 }

@@ -21,33 +21,33 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         print("OK")
     })
 
-    override func viewDidLoad() {
+    override final func viewDidLoad() {
         super.viewDidLoad()
         //Notificationの追加
         //APIから情報を更新した時に発火
-        NotificationCenter.default.addObserver(self, selector: #selector(ApplyData), name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applyData), name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         
         //検索結果が0件の時に発火
-        NotificationCenter.default.addObserver(self, selector: #selector(ErrorAlart), name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(errorAlart), name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
         
         let datarequest = DataRequest()
         datarequest.request(reset: true)
     }
     
-    @objc func ApplyData(){
+    @objc final func applyData(){
         resultTable.reloadData()
     }
     
-    @objc func ErrorAlart(){
+    @objc final func errorAlart(){
         self.noDataAlart.addAction(self.okButton)
         self.present(self.noDataAlart, animated: true, completion: nil)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    final func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.delegate.searchResult.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         //店舗名------------------------
         if let name:String = (self.delegate.searchResult[indexPath.row]["name"]! as? String){
@@ -80,17 +80,17 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    final func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "toDetailView",sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override final func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         SVProgressHUD.show()
         delegate.selectedindex = selectedIndex
     }
     
-    override func didReceiveMemoryWarning() {
+    override final func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }

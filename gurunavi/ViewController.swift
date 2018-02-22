@@ -20,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
     
-    override func viewDidLoad() {
+    override final func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager = CLLocationManager()
@@ -42,7 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // 位置情報取得に成功したときに呼び出されるデリゲート
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    final func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         
         // 緯度・経度の表示
@@ -54,7 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         delegate.userLatitude = Float(gps.latitude)
         delegate.userLongitude = Float(gps.longitude)
     }
-    @IBAction func sliderValueChanged(_ sender: Any) {
+    @IBAction final func sliderValueChanged(_ sender: Any) {
         
         delegate.range = Int(rangeSlider.value)
         
@@ -74,7 +74,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBAction func searchButtonPushed(_ sender: Any) {
+    @IBAction final func searchButtonPushed(_ sender: Any) {
         delegate.searchResult = []
         keywordTextForm.resignFirstResponder()
         if let keyword = self.keywordTextForm.text{
@@ -83,7 +83,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
-    override func didReceiveMemoryWarning() {
+    override final func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }

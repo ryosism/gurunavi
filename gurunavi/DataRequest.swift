@@ -13,10 +13,10 @@ import Alamofire
 class DataRequest {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    public func request(reset:Bool = true) {
+    public final func request(reset:Bool = true) {
         // APIKeyは各自で入手してください-----------------------------
         // http://api.gnavi.co.jp/api/manual/restsearch/
-        let APIKey:String = ""
+        let APIKey:String = "91b060d59a80b8331101147caf6ffde3"
         //-------------------------------------------------------
 
         let params:Parameters = [
