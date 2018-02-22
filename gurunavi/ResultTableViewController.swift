@@ -9,9 +9,10 @@ import UIKit
 import Foundation
 import SVProgressHUD
 
-class ResultTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ResultTableViewController: UITableViewController{
+
+    @IBOutlet var resultTable: UITableView!
     
-    @IBOutlet weak var resultTable: UITableView!
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var selectedIndex:Int!
     
@@ -43,11 +44,11 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(self.noDataAlart, animated: true, completion: nil)
     }
     
-    final func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    final override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.delegate.searchResult.count
     }
     
-    final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    final override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         //店舗名------------------------
             cell.tenpoText.text = self.delegate.searchResult[indexPath.row].name
@@ -91,7 +92,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    final func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    final override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "toDetailView",sender: nil)
     }
