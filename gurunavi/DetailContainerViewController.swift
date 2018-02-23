@@ -59,11 +59,17 @@ class DetailContainerViewController: UIViewController {
         print("pushed")
         // 共有する項目
         let shareText = self.delegate.searchResult[index].name
-        let activityItems = [shareText]
+        var activityItems:[Any] = [shareText!]
         
+        if let shareImage = self.imageView.image{
+            activityItems.append(shareImage)
+        }
+
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
+        // 表示
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     override final func viewDidAppear(_ animated: Bool) {
