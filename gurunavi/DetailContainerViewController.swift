@@ -55,11 +55,13 @@ class DetailContainerViewController: UIViewController {
     @IBAction func shareButton(_ sender: Any) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let index:Int = delegate.selectedindex
-        
-        print("pushed")
         // 共有する項目
         let shareText = self.delegate.searchResult[index].name
         var activityItems:[Any] = [shareText!]
+        
+        if let urlMobile = self.delegate.searchResult[index].urlMobile{
+            activityItems.append(urlMobile)
+        }
         
         if let shareImage = self.imageView.image{
             activityItems.append(shareImage)

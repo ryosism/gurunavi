@@ -69,6 +69,7 @@ struct Rest:Codable {
     var openTime : String?
     var pr : PR?
     var imageURL : ImageURL?
+    var urlMobile : String?
     
     enum CodingKeys: String, CodingKey{
         case name
@@ -78,6 +79,7 @@ struct Rest:Codable {
         case openTime = "opentime"
         case pr
         case imageURL = "image_url"
+        case urlMobile = "url_mobile"
     }
     
     init(from decoder: Decoder) throws {
@@ -89,6 +91,7 @@ struct Rest:Codable {
         openTime = try? values.decode(String.self ,forKey: .openTime)
         pr = try? values.decode(PR.self ,forKey: .pr)
         imageURL = try? values.decode(ImageURL.self ,forKey: .imageURL)
+        urlMobile = try? values.decode(String.self ,forKey: .urlMobile)
     }
 }
 
