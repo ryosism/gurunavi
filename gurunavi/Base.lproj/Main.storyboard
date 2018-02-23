@@ -203,6 +203,31 @@
                                     <outlet property="topImage" destination="ddn-N7-SYX" id="ijg-yV-wG9"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lastCell" rowHeight="90" id="u7c-ai-ybd" customClass="CustomTableViewCell" customModule="gurunavi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="181" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u7c-ai-ybd" id="ehz-DU-4fE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pG-lF-P2y">
+                                            <rect key="frame" x="16" y="10" width="288" height="69.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6pG-lF-P2y" firstAttribute="leading" secondItem="ehz-DU-4fE" secondAttribute="leading" constant="16" id="N7X-Z7-b7Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="6pG-lF-P2y" secondAttribute="bottom" constant="10" id="Zj3-TE-R68"/>
+                                        <constraint firstAttribute="trailing" secondItem="6pG-lF-P2y" secondAttribute="trailing" constant="16" id="c4h-nZ-XZx"/>
+                                        <constraint firstItem="6pG-lF-P2y" firstAttribute="top" secondItem="ehz-DU-4fE" secondAttribute="top" constant="10" id="e3e-rK-jWE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lastCellText" destination="6pG-lF-P2y" id="Dlu-tV-kDs"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="AzC-np-aVf" id="0HF-gY-EPc"/>
@@ -216,7 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybe-J7-UTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-14"/>
+            <point key="canvasLocation" x="637.5" y="-14.788732394366198"/>
         </scene>
         <!--店舗詳細-->
         <scene sceneID="mxM-IX-mOe">

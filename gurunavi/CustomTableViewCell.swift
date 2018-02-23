@@ -14,4 +14,5 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var accessText: UILabel!
     
+    @IBOutlet weak var lastCellText: UILabel!
 }

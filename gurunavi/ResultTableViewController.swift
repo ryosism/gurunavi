@@ -54,9 +54,19 @@ class ResultTableViewController: UITableViewController{
     }
     
     final override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let pageNum = delegate.searchResult.count
+        
+        if indexPath.row + 1 == pageNum{
+            let cell =  resultTable.dequeueReusableCell(withIdentifier: "lastCell") as! CustomTableViewCell
+            
+            cell.lastCellText.text = "Find more delicious Restaurants and 🍺\n by your foot.🏃\n Thank Fenrrir members for 2days."
+            
+            return cell
+        }
+        
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         
-        let pageNum = delegate.searchResult.count
+        
         // ページング処理
         print(pageNum, "  ", indexPath.row)
         print(Double(indexPath.row)/Double(pageNum))
