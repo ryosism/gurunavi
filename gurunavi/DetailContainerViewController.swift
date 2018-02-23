@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import Alamofire
+import AlamofireImage
 
 class DetailContainerViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -32,13 +34,14 @@ class DetailContainerViewController: UIViewController {
             detailTextView.text = "(詳細情報がありません)"
         }
         //画像--------------------------
-        if let imageurl:String = (self.delegate.searchResult[index].imageURL?.shopImage){
+        if let imageURL:String = (self.delegate.searchResult[index].imageURL?.shopImage){
             //画像があれば店舗画像、なければデフォルト
-            let imageURL:URL = URL(string:imageurl)!
-            let imageData = try? Data(contentsOf: imageURL)
-            let image = UIImage(data:imageData!)
-
-            imageView.image = image
+            Alamofire.request(imageURL).responseImage{ response in
+                
+                if let image = response.result.value {
+                    self.imageView.image = image
+                }
+            }
         }else{
             let dinnerpngPath = Bundle.main.path(forResource: "dinner", ofType: "png")
             let dinnerImage = UIImage(contentsOfFile: dinnerpngPath!)
@@ -59,7 +62,7 @@ class DetailContainerViewController: UIViewController {
         let activityItems = [shareText]
         
         // 初期化処理
-        let activityVC = UIActivityViewController(activityItems: activityItems!, applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
     }
     
