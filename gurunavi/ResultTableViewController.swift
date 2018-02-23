@@ -8,6 +8,8 @@
 import UIKit
 import Foundation
 import SVProgressHUD
+import Alamofire
+import AlamofireImage
 
 class ResultTableViewController: UITableViewController{
 
@@ -55,13 +57,16 @@ class ResultTableViewController: UITableViewController{
         //-----------------------------
         
         //画像--------------------------
-        if let imageurl:String = (self.delegate.searchResult[indexPath.row].imageURL?.shopImage){
+        if let imageURL:String = (self.delegate.searchResult[indexPath.row].imageURL?.shopImage){
             //画像があれば店舗画像、なければデフォルト
-            let imageURL:URL = URL(string:imageurl)!
-            let imageData = try? Data(contentsOf: imageURL)
-            let image = UIImage(data:imageData!)
             
-            cell.topImage.image = image
+            Alamofire.request(imageURL).responseImage{ response in
+                
+                if let image = response.result.value {
+                    cell.topImage.image = image
+                }
+            }
+
         }else{
             let dinnerpngPath = Bundle.main.path(forResource: "dinner", ofType: "png")
             let dinnerImage = UIImage(contentsOfFile: dinnerpngPath!)
