@@ -16,14 +16,11 @@ class DetailContainerViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detailTextView: UITextView!
     
+    
     override final func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         let index:Int = delegate.selectedindex
-
-//        if let name = (self.delegate.searchResult[index].name){
-//            nameLabel.text = name
-//        }
         
         nameLabel.text = self.delegate.searchResult[index].name
         
@@ -49,6 +46,20 @@ class DetailContainerViewController: UIViewController {
             imageView.image = dinnerImage
         }
         //------------------------------
+        
+    }
+    
+    @IBAction func shareButton(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let index:Int = delegate.selectedindex
+        
+        print("pushed")
+        // 共有する項目
+        let shareText = self.delegate.searchResult[index].name
+        let activityItems = [shareText]
+        
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems!, applicationActivities: nil)
         
     }
     

@@ -14,7 +14,7 @@ import AlamofireImage
 class ResultTableViewController: UITableViewController{
 
     @IBOutlet var resultTable: UITableView!
-    
+        
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var selectedIndex:Int!
     

@@ -277,6 +277,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K7n-bs-jv7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="店舗詳細" id="Oo8-8w-4H4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="b8S-zt-30w">
+                            <connections>
+                                <action selector="shareButton:" destination="Hfg-Bc-Kop" id="Kfr-ys-2Wr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailTextView" destination="uN5-SK-gOT" id="O1f-Gz-OFN"/>
                         <outlet property="imageView" destination="tw6-OP-t3w" id="TrN-0L-EKT"/>
