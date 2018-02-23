@@ -33,6 +33,9 @@ class ResultTableViewController: UITableViewController{
         //検索結果が0件の時に発火
         NotificationCenter.default.addObserver(self, selector: #selector(errorAlart), name: NSNotification.Name(rawValue: "ErrorAlart"), object: nil)
         
+        //API追加リクエストOKと判断した時に発火
+        NotificationCenter.default.addObserver(self, selector: #selector(errorAlart), name: NSNotification.Name(rawValue: "ReadyToRequest"), object: nil)
+        
         let datarequest = DataRequest()
         datarequest.request(reset: true)
     }
@@ -52,29 +55,50 @@ class ResultTableViewController: UITableViewController{
     
     final override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  resultTable.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
+        
+        let pageNum = delegate.searchResult.count
+        // ページング処理
+        print(pageNum, "  ", indexPath.row)
+        print(Double(indexPath.row)/Double(pageNum))
+        
+        // 追加のロードができる条件
+        // (1) 現在見ているページの番号がロードしたページの８割を超える
+        // Double(indexPath.row)/Double(pageNum) >= 0.8
+        // (2) すでにAPIにリクエストを送っていない
+        // !delegate.isRequesting
+        // (3) 検索結果の該当総数と今ロードしたページ数が一緒ではない
+        // delegate.totalHitCount != pageNum
+        
+        // (4) ロードしたページ数が1000件を超えていない(APIの仕様)
+        // pageNum < 1000
+
+        if (Double(indexPath.row)/Double(pageNum) >= 0.8 &&
+            !delegate.isRequesting &&
+            delegate.totalHitCount != pageNum &&
+            pageNum < 1000)
+        {
+            let dataRequest = DataRequest()
+            dataRequest.request(reset: false, offset: pageNum / 50 + 1)
+        }
         //店舗名------------------------
             cell.tenpoText.text = self.delegate.searchResult[indexPath.row].name
-        //-----------------------------
         
         //画像--------------------------
         if let imageURL:String = (self.delegate.searchResult[indexPath.row].imageURL?.shopImage){
             //画像があれば店舗画像、なければデフォルト
-            
             Alamofire.request(imageURL).responseImage{ response in
                 
                 if let image = response.result.value {
                     cell.topImage.image = image
                 }
             }
-
+            
         }else{
             let dinnerpngPath = Bundle.main.path(forResource: "dinner", ofType: "png")
             let dinnerImage = UIImage(contentsOfFile: dinnerpngPath!)
 
             cell.topImage.image = dinnerImage
         }
-        //------------------------------
-        
         //アクセス------------------------
         if let access = delegate.searchResult[indexPath.row].access{
             // 文を整形
@@ -91,8 +115,6 @@ class ResultTableViewController: UITableViewController{
             }
             cell.accessText.text = fullAccess
         }
-        
-        //------------------------------
         
         return cell
     }

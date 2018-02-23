@@ -13,19 +13,28 @@ import Alamofire
 class DataRequest {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    public final func request(reset:Bool = true) {
+    public final func request(reset:Bool = true, offset:Int = 1) {
+
+        delegate.isRequesting = true
+        
         // APIKeyは各自で入手してください-----------------------------
         // http://api.gnavi.co.jp/api/manual/restsearch/
         let APIKey:String = "91b060d59a80b8331101147caf6ffde3"
         //-------------------------------------------------------
 
+        if reset{
+            self.delegate.searchResult = []
+        }
+        
         let params:Parameters = [
             "keyid":APIKey,
             "format":"json",
             "freeword":self.delegate.userSearchKeyWord,
             "latitude":self.delegate.userLatitude,
             "longitude":self.delegate.userLongitude,
-            "range":self.delegate.range
+            "range":self.delegate.range,
+            "offset_page":offset,
+            "hit_per_page":50
         ]
         
         Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseData{ response in
@@ -35,8 +44,7 @@ class DataRequest {
                 return
             }
             let Codabledata = try! JSONDecoder().decode(ResponceData.self, from: object)
-            
-            self.delegate.searchResult = Codabledata.rest
+            self.delegate.searchResult.append(contentsOf: Codabledata.rest)
             
             if (Int(Codabledata.totalHitCount) == 0){
                 print("該当なし")
@@ -44,7 +52,9 @@ class DataRequest {
                 return
             }
             print(Codabledata.totalHitCount, "件該当しました")
-//            if reset { self.delegate.searchResult = [] }
+            self.delegate.totalHitCount = Int(Codabledata.totalHitCount)!
+            
+            self.delegate.isRequesting = false
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ApplyData"), object: nil)
         }
@@ -53,10 +63,12 @@ class DataRequest {
 
 struct ResponceData:Codable {
     var totalHitCount : String
+    var pageNum : String
     var rest : [Rest]
     
     enum CodingKeys: String, CodingKey{
         case totalHitCount = "total_hit_count"
+        case pageNum = "hit_per_page"
         case rest
     }
 }

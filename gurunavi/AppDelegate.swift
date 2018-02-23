@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userSearchKeyWord = ""
     var selectedindex:Int!
     var range:Int = 2
-    
+
+    var isRequesting = false
+    var totalHitCount = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
