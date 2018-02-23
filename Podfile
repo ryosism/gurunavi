@@ -8,6 +8,7 @@ target 'gurunavi' do
   # Pods for gurunavi
 
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
